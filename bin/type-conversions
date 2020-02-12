@@ -1,0 +1,40 @@
+type conversion 
+
+- two types of conversion 
+	- implicit type
+	- explicit type
+
+*******************************
+implicit type
+
+conversions are done automatically by the compiler 
+e.g.
+
+int intVal = 50;
+long longVal = intVal;
+
+intVal is converted from a 32-bit integer to a 64-bit integer once stored in longVal
+
+- widening conversions are done automaitcally because we are omving to a wider data type
+- if i have multiple integer sizes in the same equation, the largest size will be used to perform all operations
+- if i have multiple floating point sizes in the same equation, all operations will be done in double as it is larger than float
+- if i have integers and floating points then operations will be done in the largest floating point in the equation
+
+*******************************
+explicit type
+
+conversions performed explicitly in code with cast operator
+e.g.
+
+long longVal = 50;
+int intVal = (int)longVal;
+
+i am explicitly telling the compiler that i wan tto go from a 64-bit integer to a 32-bit integer
+i place the type that i want to convert to in paranthesis next to the value that i want to cast
+
+- can be used for widening or narrowing
+- narrowing from floating point to integer will drop the fraction
+- use caution with narrowing conversions, if i have a 64-bit integer it has the possibility to hold values
+that are much larger than a 32-bit, casting it down to a 32-bit can cause odd results
+- integer to floating point can lose precision, if you have a very large integer and because of the way floating points
+are stored you could lose some precision
